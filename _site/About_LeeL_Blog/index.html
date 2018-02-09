@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About LeeL Blog – LeeL-Blog-Template-01</title>    
+
+    <meta itemprop="url" content="http://127.0.0.1:4000//About_LeeL_Blog/">
+
+    <link rel="icon" type="image/png" href="http://127.0.0.1:4000/resources/page/Logo/logo_16x16.png"/>
+
+    <link href="http://127.0.0.1:4000/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="http://127.0.0.1:4000/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="http://127.0.0.1:4000/css/post.css" rel='stylesheet' type='text/css' />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script type="application/javascript">
+
+        addEventListener("load",
+        function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); }
+    </script>
+    <script src="http://127.0.0.1:4000/js/jquery.min.js"></script>
+    <script type="application/javascript">
+        $(document).ready(function() {
+            $(".dropdown img.flag").addClass("flagvisibility");
+
+            $(".dropdown dt a").click(function() {
+                $(".dropdown dd ul").toggle();
+            });
+
+            $(".dropdown dd ul li a").click(function() {
+                var text = $(this).html();
+                $(".dropdown dt a span").html(text);
+                $(".dropdown dd ul").hide();
+                $("#result").html("Selected value is: " + getSelectedValue("sample"));
+            });
+
+            function getSelectedValue(id) {
+                return $("#" + id).find("dt a span.value").html();
+            }
+
+            $(document).bind('click', function(e) {
+                var $clicked = $(e.target);
+                if (! $clicked.parents().hasClass("dropdown"))
+                    $(".dropdown dd ul").hide();
+            });
+
+            $("#flagSwitcher").click(function() {
+                $(".dropdown img.flag").toggleClass("flagvisibility");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="LeeL-Blog-Template-01">
+    </span>
+
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="header-left">
+                        <div class="logo">
+                            <a href="http://127.0.0.1:4000/"><img src="http://127.0.0.1:4000/resources/page/Logo/logo_64x64.png" alt="" /></a>
+                        </div>
+                        <div class="menu">
+                            <a class="toggleMenu" href="http://127.0.0.1:4000/"><img src="http://127.0.0.1:4000/resources/page/Icon/nav.png" alt="" /></a>
+                            <ul class="nav" id="nav">
+                                <li><a href="http://127.0.0.1:4000/blog.html">Blog</a></li>
+                                <div class="clear"></div>
+                            </ul>
+                            <script type="application/javascript" src="http://127.0.0.1:4000/js/responsive-nav.js"></script>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="header_right">
+                        <!-- start search-->
+                        <div class="search-box">
+                            <div id="sb-search" class="sb-search">
+                                <form action="http://127.0.0.1:4000/search.html" method="GET">
+                                    <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+                                    <input type="search" name="site" id="site" value="http://127.0.0.1:4000" hidden="hidden">
+                                    <input class="sb-search-submit" type="submit" value="">
+                                    <span class="sb-icon-search"> </span>
+                                </form>
+                            </div>
+                        </div>
+                        <!----search-scripts---->
+                        <script src="http://127.0.0.1:4000/js/classie.js"></script>
+                        <script src="http://127.0.0.1:4000/js/uisearch.js"></script>
+                        <script>
+                            new UISearch(document.getElementById('sb-search'));
+                        </script>
+                        <!----//search-scripts---->
+                        <div class="clear"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <meta itemprop="image" content="http://127.0.0.1:4000/resources/page/Post/post_blog.jpg">
+<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="">
+</span>
+
+<div itemscope itemtype="http://schema.org/Article" id="main" role="main" class="container">
+    <h3 itemprop="name" class="m_3">About LeeL Blog</h3>
+    <div class="close_but"><i class="close1"></i></div>
+    <span itemprop="articleBody">
+        <h1 id="welcome-to-leel-blog">Welcome to LeeL Blog</h1>
+
+<p>LeeL Blog allows you blog for free using Evernote ( <a href="www.evernote.com">www.evernote.com</a> ) as your post editor and Github ( <a href="www.github.com">www.github.com</a> ) as your website host. </p>
+
+<p>Using our blog template, you can create your new blog in seconds, without any programing knowledge nor hassle. </p>
+
+<p>You can choose to post in standard HTML or the well known Markdown syntax of formating.</p>
+
+<p>If you are a designer or a programmer and would like fully customize your blog appearance, you can use the power of Github to track your modifications and work together with your team. </p>
+
+<p>Already have a Github page? No problem, LeeL Blog is able to post on existing Github pages, improving your post experience and reducing the time you use to maintain your site today.</p>
+
+<p>Why would you pay for similar services like <a href="www.postach.io">www.postach.io</a>  if you can have it for free and with more posting options?</p>
+
+<p>Why would you pay for a host service like <a href="www.wordpress.com">www.wordpress.com</a>  or opt to have storage limits and ads on your website if you can have it for free without any limitation and have your site hosted in a reliable company as Github?</p>
+
+<p>If you are like us and believe that anyone should have the right to easily and freely disseminate ideas, give LeeL Blog a try!</p>
+
+
+    </span>
+    <div class="blg_post_date">        
+        Written on 
+        <span itemprop="datePublished" content="2015-05-24">May 24, 2015</span>
+    </div>
+    <div class="close_but"><i class="close1"></i></div>
+    
+<div class="comments">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+    
+	    var disqus_shortname = 'LeeL_Systems'; 
+
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+</div>
+
+           
+    <div class="footer" style="margin-top: 20px;">
+        <div class="container">
+            <div class="row">
+            </div>            
+        </div>
+    </div>    
+
+    
+
+</body>
+</html>
