@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<meta itemprop="image" content="{{ site.url }}{{ site.baseurl }}/resources/page/Post/{{ page.image }}">
+<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="{{ page.author }}">
+</span>
+
+<div itemscope itemtype="http://schema.org/Article" id="main" role="main" class="container">
+    <h3 itemprop="name" class="m_3">{{ page.title }}</h3>
+    <div class="close_but"><i class="close1"></i></div>
+    <span itemprop="articleBody">
+        {{ content }}
+    </span>
+    <div class="blg_post_date">        
+        Written on 
+        <span itemprop="datePublished" content="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %e, %Y" }}</span>
+    </div>
+    <div class="close_but"><i class="close1"></i></div>
+    {% include disqus.html disqus_identifier=page.disqus_identifier %}
+</div>
