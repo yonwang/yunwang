@@ -1,0 +1,29 @@
+---
+layout: banner
+---
+
+<div class="features">
+    <div class="container">
+        <h3 class="m_3">Recent Posts</h3>
+        <div class="close_but"><i class="close1"> </i></div>
+
+            {% tablerow post in site.posts cols: 4 limit: 8 %}
+                <div class="col-md-3 top_box" style="height: 300px;">
+                    <div class="view view-ninth">
+                        <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">
+                            <img src="{{ site.url }}{{ site.baseurl }}/resources/page/Post/{{ post.image }}" class="img-responsive" alt="" onerror="this.onerror = null; this.src = '{{ site.url }}{{ site.baseurl }}/resources/page/Post/post_blog.jpg';" />
+                            <div class="mask mask-1"> </div>
+                            <div class="mask mask-2"> </div>
+                            <div class="content">
+                                <h2>{{ post.subject }}</h2>
+                                <p class="content" style=" margin-top: 11px; height: 80px; ">{{ post.content | strip_html | truncatewords:40 }}</p>
+                            </div>
+                        </a>
+                    </div>
+                    <h4 class="m_4" style="display: inherit; text-align: -webkit-center;"><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title | truncatewords:30 }}</a></h4>
+                </div>
+            {% endtablerow %}
+
+    </div>
+</div>
+
