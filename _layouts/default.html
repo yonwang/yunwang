@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>    
+
+    <meta itemprop="url" content="{{ site.url }}{{ site.baseurl }}/{{ page.url }}">
+
+    <link rel="icon" type="image/png" href="{{ site.url }}{{ site.baseurl }}/resources/page/Logo/logo_16x16.png"/>
+
+    <link href="{{ site.url }}{{ site.baseurl }}/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="{{ site.url }}{{ site.baseurl }}/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="{{ site.url }}{{ site.baseurl }}/css/post.css" rel='stylesheet' type='text/css' />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script type="application/javascript">
+
+        addEventListener("load",
+        function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); }
+    </script>
+    <script src="{{ site.url }}{{ site.baseurl }}/js/jquery.min.js"></script>
+    <script type="application/javascript">
+        $(document).ready(function() {
+            $(".dropdown img.flag").addClass("flagvisibility");
+
+            $(".dropdown dt a").click(function() {
+                $(".dropdown dd ul").toggle();
+            });
+
+            $(".dropdown dd ul li a").click(function() {
+                var text = $(this).html();
+                $(".dropdown dt a span").html(text);
+                $(".dropdown dd ul").hide();
+                $("#result").html("Selected value is: " + getSelectedValue("sample"));
+            });
+
+            function getSelectedValue(id) {
+                return $("#" + id).find("dt a span.value").html();
+            }
+
+            $(document).bind('click', function(e) {
+                var $clicked = $(e.target);
+                if (! $clicked.parents().hasClass("dropdown"))
+                    $(".dropdown dd ul").hide();
+            });
+
+            $("#flagSwitcher").click(function() {
+                $(".dropdown img.flag").toggleClass("flagvisibility");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="{{ site.name }}">
+    </span>
+
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="header-left">
+                        <div class="logo">
+                            <a href="{{ site.url }}{{ site.baseurl }}/"><img src="{{ site.url }}{{ site.baseurl }}/resources/page/Logo/logo_64x64.png" alt="" /></a>
+                        </div>
+                        <div class="menu">
+                            <a class="toggleMenu" href="{{ site.url }}{{ site.baseurl }}/"><img src="{{ site.url }}{{ site.baseurl }}/resources/page/Icon/nav.png" alt="" /></a>
+                            <ul class="nav" id="nav">
+                                <li><a href="{{ site.url }}{{ site.baseurl }}/blog.html">Blog</a></li>
+                                <div class="clear"></div>
+                            </ul>
+                            <script type="application/javascript" src="{{ site.url }}{{ site.baseurl }}/js/responsive-nav.js"></script>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="header_right">
+                        <!-- start search-->
+                        <div class="search-box">
+                            <div id="sb-search" class="sb-search">
+                                <form action="{{ site.url }}{{ site.baseurl }}/search.html" method="GET">
+                                    <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+                                    <input type="search" name="site" id="site" value="{{ site.url }}" hidden="hidden">
+                                    <input class="sb-search-submit" type="submit" value="">
+                                    <span class="sb-icon-search"> </span>
+                                </form>
+                            </div>
+                        </div>
+                        <!----search-scripts---->
+                        <script src="{{ site.url }}{{ site.baseurl }}/js/classie.js"></script>
+                        <script src="{{ site.url }}{{ site.baseurl }}/js/uisearch.js"></script>
+                        <script>
+                            new UISearch(document.getElementById('sb-search'));
+                        </script>
+                        <!----//search-scripts---->
+                        <div class="clear"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {{ content }}
+           
+    <div class="footer" style="margin-top: 20px;">
+        <div class="container">
+            <div class="row">
+            </div>            
+        </div>
+    </div>    
+
+    {% include analytics.html %}
+</body>
+</html>
