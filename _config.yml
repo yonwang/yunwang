@@ -1,0 +1,33 @@
+name: yunwang
+url: http://yonwang.github.io
+baseurl: /yunwang
+description: 
+avatar: 
+disqus: 
+google_analytics: 
+categoryConfigByCategory:
+  Blog:
+    display-style: post
+    menu-position: -1
+    header-position: 0
+    foot-position: -1
+siteConfigBySite:
+  Github:
+    link: https://github.com/LeeL-Systems
+    display-style: socialMedia
+    position: 0
+markdown: kramdown
+highlighter: pygments
+permalink: /:title/
+version: v1.0.0
+sass:
+  sass_dir: _scss
+  style: :expanded
+gems:
+  - jemoji
+  - jekyll-sitemap
+exclude:
+    - Gemfile
+    - Gemfile.lock
+    - LICENSE
+    - README.md
